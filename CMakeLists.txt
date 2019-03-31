@@ -10,6 +10,11 @@ set (CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/output")
 option (USE_MYMATH 
         "Use tutorial provided math implementation" ON) 
  
+# does this system provide the log and exp functions?
+include (CheckFunctionExists)
+check_function_exists (exp HAVE_EXP)
+check_function_exists (log HAVE_LOG)
+
 # configure a header file to pass some of the CMake settings
 # to the source code
 configure_file (

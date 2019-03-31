@@ -11,3 +11,4 @@ CMakeLists.txt.user
 MathFunctions/libMathFunctions.a
 Tutorial
 output
+TutorialConfig.h
