@@ -14,3 +14,7 @@ output
 TutorialConfig.h
 MathFunctions/MakeTable
 *.autosave
+.DS_Store
+_*
+CPackConfig.cmake
+CPackSourceConfig.cmake

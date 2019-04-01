@@ -10,7 +10,7 @@ add_custom_command (
 
 # add the binary tree directory to the search path for
 # include files
-include_directories( ${CMAKE_CURRENT_BINARY_DIR} )
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_library(MathFunctions mysqrt.cxx ${CMAKE_CURRENT_BINARY_DIR}/Table.h)
 

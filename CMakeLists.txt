@@ -11,7 +11,8 @@ option (USE_MYMATH
         "Use tutorial provided math implementation" ON) 
  
 # does this system provide the log and exp functions?
-include (CheckFunctionExists)
+include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
+
 check_function_exists (exp HAVE_EXP)
 check_function_exists (log HAVE_LOG)
 
@@ -33,7 +34,6 @@ include_directories("${PROJECT_BINARY_DIR}")
 #target_link_libraries (Tutorial MathFunctions)
 
 # add the MathFunctions library?
-#
 if (USE_MYMATH)
   include_directories ("${PROJECT_SOURCE_DIR}/MathFunctions")
   add_subdirectory (MathFunctions)
@@ -48,3 +48,10 @@ target_link_libraries (Tutorial  ${EXTRA_LIBS})
 install (TARGETS Tutorial DESTINATION bin)
 install (FILES "${PROJECT_BINARY_DIR}/TutorialConfig.h"        
          DESTINATION include)
+
+# build a CPack driven installer package
+include (InstallRequiredSystemLibraries)
+set (CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set (CPACK_PACKAGE_VERSION_MAJOR "${Tutorial_VERSION_MAJOR}")
+set (CPACK_PACKAGE_VERSION_MINOR "${Tutorial_VERSION_MINOR}")
+include (CPack)
