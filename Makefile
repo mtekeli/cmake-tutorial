@@ -1,3 +1,8 @@
+CMAKE_OPTIONS = 
+ifdef USE_MYMATH
+	CMAKE_OPTIONS += -DUSE_MYMATH=${USE_MYMATH}
+endif
+
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 .PHONY: build, qtc, config, clean, install
@@ -13,7 +18,7 @@ qtc:
 
 config: clean
 	@ mkdir -p bin
-	@ cd bin && cmake -DUSE_MYMATH=OFF ../
+	@ cd bin && cmake ${CMAKE_OPTIONS} ../
 
 clean:
 	@ rm -rf ./bin || true
