@@ -2,7 +2,6 @@ CMakeCache.txt
 CMakeFiles
 CMakeScripts
 Testing
-Makefile
 cmake_install.cmake
 install_manifest.txt
 compile_commands.json
@@ -12,7 +11,7 @@ MathFunctions/libMathFunctions.a
 Tutorial
 output
 TutorialConfig.h
-MathFunctions/MakeTable
+MathFunctions
 *.autosave
 .DS_Store
 _*
