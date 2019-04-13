@@ -1,5 +1,5 @@
-cmake_minimum_required (VERSION 2.6)
-project (Tutorial)
+cmake_minimum_required (VERSION 3.0)
+project (CMakeTutorial)
 # The version number.
 set (Tutorial_VERSION_MAJOR 1)
 set (Tutorial_VERSION_MINOR 0)
@@ -8,13 +8,14 @@ set (CMAKE_INSTALL_PREFIX "${PROJECT_SOURCE_DIR}/output")
 
 # should we use our own math functions?
 option (USE_MYMATH 
-        "Use tutorial provided math implementation" ON) 
+        "Use tutorial provided math implementation" OFF) 
  
 # does this system provide the log and exp functions?
 include (${CMAKE_ROOT}/Modules/CheckFunctionExists.cmake)
 
 check_function_exists (exp HAVE_EXP)
 check_function_exists (log HAVE_LOG)
+check_function_exists (sqrt HAVE_SQRT)
 
 # configure a header file to pass some of the CMake settings
 # to the source code
