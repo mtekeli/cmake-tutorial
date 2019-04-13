@@ -18,3 +18,4 @@ MathFunctions
 _*
 CPackConfig.cmake
 CPackSourceConfig.cmake
+MathFunctions/Table.h
